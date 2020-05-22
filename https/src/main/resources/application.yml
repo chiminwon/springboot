@@ -1,0 +1,5 @@
+server:
+  ssl:
+    key-store: classpath:test.p12
+    key-alias: tomcat
+    key-store-password: 123456
