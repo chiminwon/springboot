@@ -12,6 +12,8 @@
     <modules>
         <module>https</module>
         <module>security</module>
+        <module>mybatis</module>
+        <module>jdbc</module>
     </modules>
 
     
