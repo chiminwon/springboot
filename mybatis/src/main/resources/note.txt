@@ -1,0 +1,14 @@
+// Swagger访问路径
+http://localhost:8080/swagger-ui.html
+// Swagger2配置
+增加一个Swagger2配置类
+1. Controller增加注解
+1. Model增加注解
+Security需要对相应的接口配置
+@Override
+public void configure(WebSecurity web) throws Exception {
+    web.ignoring()
+            .antMatchers("/swagger-ui.html")
+            .antMatchers("/v2/**")
+            .antMatchers("/swagger-resources/**");
+}

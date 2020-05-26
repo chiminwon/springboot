@@ -1,4 +1,4 @@
-package com.min.jdbc;
+package com.ming.jdbc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

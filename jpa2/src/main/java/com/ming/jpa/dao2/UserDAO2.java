@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface UserDAO extends JpaRepository<User, Long> {
+//@Repository
+public interface UserDAO2 extends JpaRepository<User, Long> {
 
     List<User> getUserByAddressEqualsAndIdLessThanEqual(String address, Long id);
 

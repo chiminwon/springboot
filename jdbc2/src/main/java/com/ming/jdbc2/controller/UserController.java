@@ -1,6 +1,6 @@
-package com.min.jdbc.controller;
+package com.ming.jdbc2.controller;
 
-import com.min.jdbc.model.User;
+import com.ming.jdbc2.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

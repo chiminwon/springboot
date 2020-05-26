@@ -1,4 +1,4 @@
-package com.min.jdbc.config;
+package com.ming.jdbc2.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

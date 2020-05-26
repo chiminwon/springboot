@@ -1,6 +1,6 @@
-package com.ming.jdbc2.controller;
+package com.ming.jdbc.controller;
 
-import com.ming.jdbc2.model.User;
+import com.ming.jdbc.model.User;
 import com.ming.jdbc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

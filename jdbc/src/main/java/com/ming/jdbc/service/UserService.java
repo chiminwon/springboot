@@ -1,6 +1,6 @@
-package com.min.jdbc.service;
+package com.ming.jdbc.service;
 
-import com.min.jdbc.model.User;
+import com.ming.jdbc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

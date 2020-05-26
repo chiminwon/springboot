@@ -11,19 +11,14 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.ming.mybatis2.mapper", sqlSessionFactoryRef = "sqlSessionFactory1", sqlSessionTemplateRef = "sqlSessionTemplate1")
-public class MyBatisConfigOne {
+@MapperScan(basePackages = "com.ming.mybatis2.mapper2", sqlSessionFactoryRef = "sqlSessionFactory2", sqlSessionTemplateRef = "sqlSessionTemplate2")
+public class MyBatisConfigTwo {
 
-    @Resource(name = "dsOne")
+    @Resource(name = "dsTwo")
     DataSource dsOne;
 
     @Bean
-    SqlSessionTemplate sqlSessionTemplate1() {
-        return new SqlSessionTemplate(sqlSessionFactory1());
-    }
-
-    @Bean
-    SqlSessionFactory sqlSessionFactory1() {
+    SqlSessionFactory sqlSessionFactory2() {
         SqlSessionFactory sessionFactory = null;
         try {
             SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
@@ -33,5 +28,10 @@ public class MyBatisConfigOne {
             e.printStackTrace();
         }
         return sessionFactory;
+    }
+
+    @Bean
+    SqlSessionTemplate sqlSessionTemplate2() {
+        return new SqlSessionTemplate(sqlSessionFactory2());
     }
 }

@@ -1,4 +1,4 @@
-package com.ming.mybatis2.mapper1;
+package com.ming.mybatis2.mapper2;
 
 import com.ming.mybatis2.model.User;
 import org.apache.ibatis.annotations.*;

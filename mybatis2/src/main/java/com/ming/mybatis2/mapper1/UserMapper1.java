@@ -1,4 +1,4 @@
-package com.ming.mybatis2.mapper2;
+package com.ming.mybatis2.mapper1;
 
 import com.ming.mybatis2.model.User;
 import org.apache.ibatis.annotations.*;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserMapper {
+public interface UserMapper1 {
 
     @Select("select * from user")
     List<User> getAllUsers();

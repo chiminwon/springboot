@@ -1,4 +1,4 @@
-package com.min.jdbc;
+package com.ming.jdbc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -13,7 +13,12 @@
         <module>https</module>
         <module>security</module>
         <module>mybatis</module>
+        <module>mybatis2</module>
         <module>jdbc</module>
+        <module>jdbc2</module>
+        <module>jpa</module>
+        <module>jpa2</module>
+        <module>mailsender</module>
     </modules>
 
     

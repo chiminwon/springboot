@@ -15,29 +15,28 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.ming.jpa.dao", entityManagerFactoryRef = "localContainerEntityManagerFactoryBeanOne")
-public class JpaConfigOne {
+@EnableJpaRepositories(basePackages = "com.ming.jpa.dao2", entityManagerFactoryRef = "localContainerEntityManagerFactoryBeanTwo", transactionManagerRef = "platformTransactionManagerOne")
+public class JpaConfigTwo {
 
     @Autowired
-    @Qualifier(value = "dsOne")
-    DataSource dsOne;
+    @Qualifier(value = "dsTwo")
+    DataSource dsTwo;
 
     @Autowired
     JpaProperties jpaProperties;
 
     @Bean
-    @Primary
-    LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBeanOne(EntityManagerFactoryBuilder builder){
-        return builder.dataSource(dsOne)
+    LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBeanTwo(EntityManagerFactoryBuilder builder) {
+        return builder.dataSource(dsTwo)
                 .packages("com.ming.jpa.model")
                 .properties(jpaProperties.getProperties())
-                .persistenceUnit("pu1")
+                .persistenceUnit("pu2")
                 .build();
     }
 
     @Bean
-    PlatformTransactionManager platformTransactionManagerOne(EntityManagerFactoryBuilder builder){
-        LocalContainerEntityManagerFactoryBean factoryBean = localContainerEntityManagerFactoryBeanOne(builder);
+    PlatformTransactionManager platformTransactionManagerTwo(EntityManagerFactoryBuilder builder) {
+        LocalContainerEntityManagerFactoryBean factoryBean = localContainerEntityManagerFactoryBeanTwo(builder);
         return new JpaTransactionManager(factoryBean.getObject());
     }
 }

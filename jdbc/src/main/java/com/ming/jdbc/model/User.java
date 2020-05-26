@@ -1,4 +1,4 @@
-package com.ming.jdbc2.model;
+package com.ming.jdbc.model;
 
 import lombok.Data;
 
