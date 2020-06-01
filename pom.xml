@@ -18,8 +18,13 @@
         <module>jdbc2</module>
         <module>jpa</module>
         <module>jpa2</module>
+        <module>redis</module>
         <module>mailsender</module>
+        <module>nginx</module>
+        <module>idempotent</module>
+        <module>mysql</module>
+        <module>designpattern</module>
+        <module>thymeleaf</module>
     </modules>
 
-    
 </project>

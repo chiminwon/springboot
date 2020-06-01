@@ -1,0 +1,11 @@
+spring:
+  profiles: peer1
+server:
+  port: 8001
+
+---
+
+spring:
+  profiles: peer2
+server:
+  port: 8002

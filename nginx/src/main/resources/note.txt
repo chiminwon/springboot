@@ -1,0 +1,31 @@
+# Nginx要做的事情都是通过配置文件里指定
+events {}
+http {
+
+  # Tomcat服务集群
+  upstream tomcatservers {
+    # 两个tomcat
+    server 127.0.0.1:8001 weight=3 max_fails=3 fail_timeout=10s;
+	server 127.0.0.1:8002 weight=2 max_fails=3 fail_timeout=10s;
+  }
+  server {	#虚拟服务器，默认端口80
+    listen 8000;
+
+	proxy_read_timeout 10s;
+	proxy_next_upstream error timeout; # 故障转移条件
+	proxy_next_upstream_tries 3; # 重试次数
+	proxy_next_upstream_timeout 60s; # 重试的最长时间
+
+    location / { # 根据用户的url，走不同的流程，相当于通配符
+      # root 资源所在的根地址，此处为Nginx安装的相对地址
+      # root html;
+	  proxy_set_header Host $http_host;
+      # 向指定ip发起请求，将代理请求返回的的内容作为响应
+	  proxy_pass http://tomcatservers;
+    }
+
+    location ~ \.(gif|jpg|png|css|js|html)$ {
+	  root /data/www;
+	}
+  }
+}
